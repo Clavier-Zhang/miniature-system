@@ -14,47 +14,19 @@ bad_key_words = [
     'support',
     'test',
     'tester',
-    'research'
-    'automation',
     'writer',
     'quality',
     'embedded',
     'investment',
-    'ops',
-    'technical',
     'physics',
     'hardware',
     'sales',
-    'UX',
-    'UI',
-    'UX-UI',
     'design',
     'manager',
-    'devops',
-    '3D',
     'qa',
-    'designer',
-    'researcher',
-    'android',
-    'ios',
-    'mobile',
     'business',
     'risk',
-    'ui',
-    'ux',
-    'automation',
-    'cloud',
-    'testing',
-    'windows',
-    'operations',
-    'siri',
-    'firmware',
-    'coordinator',
-    'digital',
-    'customer',
-    'research',
-    'security',
-    'human'
+    'testing'
 ]
 def contains_word(s, w):
     return (' ' + w + ' ') in (' ' + s + ' ')
@@ -117,7 +89,7 @@ class WorksDriver:
                 applications = fields[10].text
 
                 discard_button = WebDriverWait(fields[12], 5).until(EC.element_to_be_clickable((By.TAG_NAME, "a")))
-                print(id+' '+title+' '+organization+' '+ openings+' '+city+' '+level+' '+applications)
+                # print(id+' '+title+' '+organization+' '+ openings+' '+city+' '+level+' '+applications)
                 organization_set.add(organization)
 
                 if contains_bad_key_words(title, bad_key_words):
